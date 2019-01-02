@@ -9,7 +9,6 @@
   "author": "Joe LoPresti",
   "license": "ISC",
   "dependencies": {
-    "babel-preset-stage-0": "^6.24.1",
     "express": "^4.16.4",
     "moment": "^2.23.0",
     "nodemon": "^1.18.9"
