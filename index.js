@@ -11,7 +11,7 @@ const dateParse = (req, res) => {
     // Check for valid date
       if (moment(date, 'MMMM DD YYYY').isValid()) {
         let unix = Math.round((new Date(date).getTime()/1000));
-        let utc = moment(date).format('ddd, DD MMM YYYY HH:mm:ss z');
+        let utc = moment(date).format('ddd, DD MMM YYYY HH:mm:ss');
         res.send({unix, utc})
       }
       else {
@@ -20,9 +20,9 @@ const dateParse = (req, res) => {
   
     } else {
       if (moment.unix(date).isValid()){
-        console.log(moment.unix(date)));
-        let unix = moment.unix(date);
-        let utc = moment(date).format('ddd, DD MMM YYYY HH:mm:ss z');
+        let unix = date;
+        let utc = moment.unix(date).format('ddd, DD MMM YYYY HH:mm:ss');
+        res.send({unix, utc});
       } else {
         res.json({'error': 'Invalid Date'});
       }
